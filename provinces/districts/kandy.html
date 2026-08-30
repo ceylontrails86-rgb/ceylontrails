@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kandy District | CeylonTrails</title>
+
+<meta name="description"
+content="Explore Kandy District through CeylonTrails. Discover Kandy city, temples, mountains, waterfalls, hidden gems, trails and unforgettable experiences.">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f6f1;
+  color:#17352d;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+
+/* HEADER */
+
+header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  padding:22px 6%;
+  color:white;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#f2c14e;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav-links a:hover{
+  color:#f2c14e;
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:70vh;
+
+  display:flex;
+  align-items:center;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    rgba(5,30,23,.35),
+    rgba(5,30,23,.80)
+  ),
+
+  url("https://images.unsplash.com/photo-1600100397608-f0102c5a7d4c?auto=format&fit=crop&w=2200&q=90")
+  center/cover no-repeat;
+}
+
+.hero-content{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  padding-top:70px;
+}
+
+.breadcrumb{
+  color:#f2c14e;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(48px,7vw,80px);
+  line-height:1;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:680px;
+  font-size:18px;
+  color:#e8efeb;
+}
+
+
+/* GENERAL */
+
+section{
+  padding:85px 6%;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.label{
+  color:#a17b20;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.title{
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.text{
+  max-width:720px;
+  color:#6d7973;
+}
+
+
+/* QUICK INFO */
+
+.info{
+  background:white;
+}
+
+.info-grid{
+  margin-top:40px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.info-card{
+  padding:25px;
+
+  background:#f5f3eb;
+
+  border-radius:18px;
+}
+
+.info-card span{
+  font-size:30px;
+  display:block;
+  margin-bottom:12px;
+}
+
+.info-card h3{
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.info-card p{
+  color:#6d7973;
+  font-size:13px;
+}
+
+
+/* DESTINATIONS */
+
+.destinations{
+  background:#f1efe6;
+}
+
+.destination-grid{
+  margin-top:45px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.destination-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.destination-card:hover{
+  transform:translateY(-7px);
+}
+
+.destination-card img{
+  height:240px;
+  object-fit:cover;
+}
+
+.destination-content{
+  padding:22px;
+}
+
+.destination-content h3{
+  font-size:23px;
+  margin-bottom:7px;
+}
+
+.destination-content p{
+  color:#6d7973;
+  font-size:14px;
+}
+
+.destination-link{
+  display:inline-block;
+  margin-top:13px;
+  color:#a17b20;
+  font-weight:800;
+}
+
+
+/* EXPERIENCES */
+
+.experiences{
+  background:#17352d;
+  color:white;
+}
+
+.experiences .title{
+  color:white;
+}
+
+.experience-grid{
+  margin-top:45px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.experience{
+  padding:28px 23px;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,.14);
+
+  background:rgba(255,255,255,.04);
+}
+
+.experience-icon{
+  font-size:32px;
+  margin-bottom:18px;
+}
+
+.experience h3{
+  font-size:19px;
+  margin-bottom:8px;
+}
+
+.experience p{
+  color:#c6d2cc;
+  font-size:14px;
+}
+
+
+/* TRAILS */
+
+.trails{
+  background:white;
+}
+
+.trail-grid{
+  margin-top:45px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.trail-card{
+  border-radius:20px;
+  overflow:hidden;
+  background:#f7f6f1;
+}
+
+.trail-card img{
+  height:230px;
+  object-fit:cover;
+}
+
+.trail-content{
+  padding:22px;
+}
+
+.trail-content small{
+  color:#a17b20;
+  font-weight:800;
+}
+
+.trail-content h3{
+  font-size:22px;
+  margin:5px 0 8px;
+}
+
+.trail-content p{
+  color:#6d7973;
+  font-size:14px;
+}
+
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  color:white;
+
+  background:
+  linear-gradient(
+    rgba(8,38,29,.82),
+    rgba(8,38,29,.92)
+  ),
+
+  url("https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=90")
+  center/cover no-repeat;
+}
+
+.cta h2{
+  font-size:clamp(38px,6vw,62px);
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 28px;
+  color:#dce5e1;
+}
+
+.button{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:30px;
+  background:#f2c14e;
+  color:#17352d;
+  font-weight:800;
+}
+
+
+/* FOOTER */
+
+footer{
+  background:#0b211b;
+  color:white;
+  padding:50px 6% 25px;
+}
+
+.footer{
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer p{
+  color:#aebcb6;
+  font-size:14px;
+}
+
+.copyright{
+  max-width:1200px;
+  margin:35px auto 0;
+  padding-top:18px;
+
+  border-top:1px solid rgba(255,255,255,.12);
+
+  color:#82918a;
+  font-size:13px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .info-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .destination-grid,
+  .trail-grid{
+    grid-template-columns:1fr;
+  }
+
+  .experience-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:500px){
+
+  section{
+    padding:65px 5%;
+  }
+
+  .info-grid,
+  .experience-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav>
+
+<a href="../../index.html" class="logo">
+Ceylon<span>Trails</span>
+</a>
+
+<ul class="nav-links">
+
+<li>
+<a href="../../index.html">Home</a>
+</li>
+
+<li>
+<a href="../central.html">Central Province</a>
+</li>
+
+<li>
+<a href="#destinations">Destinations</a>
+</li>
+
+<li>
+<a href="#experiences">Experiences</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="breadcrumb">
+Sri Lanka / Central Province / Kandy District
+</div>
+
+<h1>
+Kandy District
+</h1>
+
+<p>
+Discover the cultural heart of Sri Lanka —
+ancient temples, beautiful mountains, forests,
+waterfalls and unforgettable journeys.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- INFO -->
+
+<section class="info">
+
+<div class="container">
+
+<div class="label">
+Discover Kandy
+</div>
+
+<h2 class="title">
+A district full of stories.
+</h2>
+
+<p class="text">
+Kandy District combines Sri Lanka's rich cultural heritage
+with spectacular mountain landscapes and natural adventures.
+Explore historic places, peaceful forests, scenic viewpoints
+and unique local experiences.
+</p>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<span>🏛️</span>
+
+<h3>
+Culture
+</h3>
+
+<p>
+Discover temples, traditions and
+Sri Lanka's cultural heritage.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<span>⛰️</span>
+
+<h3>
+Mountains
+</h3>
+
+<p>
+Explore green hills, viewpoints
+and beautiful mountain scenery.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<span>🌿</span>
+
+<h3>
+Nature
+</h3>
+
+<p>
+Find forests, rivers, waterfalls
+and peaceful natural places.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<span>🥾</span>
+
+<h3>
+Adventure
+</h3>
+
+<p>
+Enjoy hiking, trekking and
+outdoor experiences.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DESTINATIONS -->
+
+<section class="destinations" id="destinations">
+
+<div class="container">
+
+<div class="label">
+Places To Explore
+</div>
+
+<h2 class="title">
+Kandy destinations
+</h2>
+
+<p class="text">
+Start exploring some of the most interesting places
+in Kandy District.
+</p>
+
+
+<div class="destination-grid">
+
+
+<!-- KANDY CITY -->
+
+<article class="destination-card">
+
+<img
+src="https://images.unsplash.com/photo-1600100397608-f0102c5a7d4c?auto=format&fit=crop&w=1200&q=90"
+alt="Kandy Sri Lanka">
+
+<div class="destination-content">
+
+<h3>
+Kandy City
+</h3>
+
+<p>
+Discover the cultural capital of Sri Lanka,
+surrounded by beautiful mountains.
+</p>
+
+<a href="#" class="destination-link">
+Explore Kandy →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- TEMPLE -->
+
+<article class="destination-card">
+
+<img
+src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=90"
+alt="Temple Sri Lanka">
+
+<div class="destination-content">
+
+<h3>
+Temple of the Sacred Tooth
+</h3>
+
+<p>
+Discover one of Sri Lanka's most important
+religious and cultural landmarks.
+</p>
+
+<a href="#" class="destination-link">
+Discover Temple →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- PERADENIYA -->
+
+<article class="destination-card">
+
+<img
+src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=90"
+alt="Kandy mountains">
+
+<div class="destination-content">
+
+<h3>
+Peradeniya
+</h3>
+
+<p>
+Explore beautiful gardens, greenery
+and the peaceful surroundings of Kandy.
+</p>
+
+<a href="#" class="destination-link">
+Explore Peradeniya →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- KNuckles -->
+
+<article class="destination-card">
+
+<img
+src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=90"
+alt="Mountain trail">
+
+<div class="destination-content">
+
+<h3>
+Knuckles Range
+</h3>
+
+<p>
+A spectacular mountain landscape
+for hikers and nature lovers.
+</p>
+
+<a href="#" class="destination-link">
+Explore Knuckles →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- HANthana -->
+
+<article class="destination-card">
+
+<img
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=90"
+alt="Hiking Sri Lanka">
+
+<div class="destination-content">
+
+<h3>
+Hanthana
+</h3>
+
+<p>
+Beautiful hills, hiking routes
+and panoramic views near Kandy.
+</p>
+
+<a href="#" class="destination-link">
+Explore Hanthana →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- WATERFALL -->
+
+<article class="destination-card">
+
+<img
+src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&q=90"
+alt="Waterfall">
+
+<div class="destination-content">
+
+<h3>
+Waterfalls & Nature
+</h3>
+
+<p>
+Discover hidden waterfalls, rivers
+and peaceful natural escapes.
+</p>
+
+<a href="#" class="destination-link">
+Find Waterfalls →
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCES -->
+
+<section class="experiences" id="experiences">
+
+<div class="container">
+
+<div class="label">
+Things To Do
+</div>
+
+<h2 class="title">
+Kandy experiences
+</h2>
+
+
+<div class="experience-grid">
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🏛️
+</div>
+
+<h3>
+Heritage
+</h3>
+
+<p>
+Explore temples, historic places
+and local traditions.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🥾
+</div>
+
+<h3>
+Hiking
+</h3>
+
+<p>
+Follow mountain trails through
+the beautiful central highlands.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🍃
+</div>
+
+<h3>
+Nature
+</h3>
+
+<p>
+Enjoy forests, rivers, gardens
+and peaceful landscapes.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<div class="experience-icon">
+📸
+</div>
+
+<h3>
+Photography
+</h3>
+
+<p>
+Capture mountains, culture,
+architecture and local life.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRAILS -->
+
+<section class="trails">
+
+<div class="container">
+
+<div class="label">
+Follow The Trail
+</div>
+
+<h2 class="title">
+Kandy trails
+</h2>
+
+<p class="text">
+Adventure routes we will develop into detailed
+trail guides as CeylonTrails grows.
+</p>
+
+
+<div class="trail-grid">
+
+
+<article class="trail-card">
+
+<img
+src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=90"
+alt="Mountain hiking">
+
+<div class="trail-content">
+
+<small>HIKING · MOUNTAINS</small>
+
+<h3>
+Hanthana Mountain Trail
+</h3>
+
+<p>
+A scenic mountain experience
+with beautiful views around Kandy.
+</p>
+
+</div>
+
+</article>
+
+
+<article class="trail-card">
+
+<img
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=90"
+alt="Nature trail">
+
+<div class="trail-content">
+
+<small>NATURE · ADVENTURE</small>
+
+<h3>
+Knuckles Adventure
+</h3>
+
+<p>
+Explore dramatic mountain landscapes,
+forests and natural beauty.
+</p>
+
+</div>
+
+</article>
+
+
+<article class="trail-card">
+
+<img
+src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&q=90"
+alt="Waterfall">
+
+<div class="trail-content">
+
+<small>NATURE · WATERFALLS</small>
+
+<h3>
+Waterfall Trail
+</h3>
+
+<p>
+Discover peaceful waterfalls and
+hidden natural places around the district.
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>
+Your Kandy trail starts here.
+</h2>
+
+<p>
+Explore the destinations, discover the experiences
+and find your own path through Kandy District.
+</p>
+
+<a
+href="../central.html"
+class="button">
+
+← Back to Central Province
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer">
+
+<div>
+
+<div class="logo">
+Ceylon<span>Trails</span>
+</div>
+
+<p>
+Explore Sri Lanka — Province by Province,
+District by District, Trail by Trail.
+</p>
+
+</div>
+
+<div>
+
+<p>
+Kandy District · Central Province · Sri Lanka 🇱🇰
+</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 CeylonTrails.
+Discover Sri Lanka. Follow Your Trail.
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
