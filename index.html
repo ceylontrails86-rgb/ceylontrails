@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ceylon Trails | Discover Sri Lanka</title>
+  <title>CeylonTrails | Discover Sri Lanka</title>
 
-  <meta name="description"
-        content="Discover Sri Lanka's most beautiful places, hidden gems, history, culture, nature and unforgettable travel experiences with Ceylon Trails.">
+  <meta name="description" content="Discover Sri Lanka with CeylonTrails. Explore beautiful destinations, scenic train journeys, wildlife, beaches, mountains, culture and unforgettable experiences.">
 
-  <meta name="keywords"
-        content="Sri Lanka travel, places to visit in Sri Lanka, Ceylon Trails, Sri Lanka tourism, travel guide, hidden places Sri Lanka">
+  <meta name="keywords" content="Sri Lanka travel, Sri Lanka tours, CeylonTrails, Ella, Kandy, Sigiriya, Galle, Yala, Sri Lanka tourism">
 
   <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="CeylonTrails | Discover Sri Lanka">
+  <meta property="og:description" content="Discover the beauty, culture and adventures of Sri Lanka with CeylonTrails.">
+  <meta property="og:type" content="website">
 
   <style>
     * {
@@ -26,121 +28,143 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f4ec;
-      color: #173b2d;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17352d;
+      background: #faf9f4;
+      line-height: 1.6;
     }
 
-    /* NAVBAR */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    nav {
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* NAVIGATION */
+
+    header {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 22px 7%;
+      z-index: 100;
+      padding: 22px 6%;
+      color: white;
+    }
+
+    nav {
+      max-width: 1250px;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      z-index: 10;
     }
 
     .logo {
       font-size: 28px;
       font-weight: 800;
-      color: #f5c542;
       letter-spacing: 1px;
     }
 
     .logo span {
-      color: white;
+      color: #f2c14e;
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
+      align-items: center;
       gap: 30px;
       list-style: none;
     }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
+    .nav-links a {
+      font-size: 14px;
       font-weight: 600;
+      transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #f5c542;
+    .nav-links a:hover {
+      color: #f2c14e;
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      background: #f2c14e;
+      color: #17352d !important;
+      border-radius: 30px;
     }
 
     /* HERO */
 
     .hero {
-      min-height: 90vh;
-      background:
-        linear-gradient(rgba(0, 30, 20, 0.55), rgba(0, 20, 15, 0.7)),
-        url("https://images.unsplash.com/photo-1588598198321-9735fd5240b3?auto=format&fit=crop&w=2000&q=85")
-        center/cover no-repeat;
-
+      min-height: 100vh;
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 20px 80px;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
     }
 
     .hero-content {
-      max-width: 900px;
-      color: white;
-    }
-
-    .hero-content small {
-      color: #f5c542;
-      font-size: 17px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .hero-content h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(50px, 8vw, 92px);
-      line-height: 1;
-      margin: 18px 0;
-    }
-
-    .hero-content p {
-      max-width: 680px;
+      width: 90%;
+      max-width: 1200px;
       margin: auto;
+      padding-top: 80px;
+    }
+
+    .hero-small {
+      color: #f2c14e;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 650px;
       font-size: 19px;
-      line-height: 1.7;
-      color: #f3f1e9;
+      color: #f4f4f4;
+      margin-bottom: 35px;
     }
 
     .hero-buttons {
-      margin-top: 32px;
       display: flex;
-      justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 15px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      display: inline-block;
+      padding: 15px 26px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: .3s;
     }
 
     .btn-primary {
-      background: #f5c542;
-      color: #173b2d;
+      background: #f2c14e;
+      color: #17352d;
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      background: #ffd75c;
     }
 
     .btn-outline {
@@ -150,252 +174,383 @@
 
     .btn-outline:hover {
       background: white;
-      color: #173b2d;
+      color: #17352d;
     }
 
-    /* SECTION */
+    /* GENERAL */
 
     section {
-      padding: 80px 7%;
+      padding: 90px 6%;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title small {
-      color: #b28a18;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section-title h2 {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      margin-top: 10px;
-      color: #173b2d;
-    }
-
-    .section-title p {
-      max-width: 650px;
-      margin: 15px auto 0;
-      color: #66736d;
-      line-height: 1.7;
-    }
-
-    /* PROVINCES */
-
-    .province-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .container {
       max-width: 1200px;
       margin: auto;
     }
 
-    .province-card {
-      background: white;
-      border-radius: 18px;
-      padding: 30px;
-      text-decoration: none;
-      color: #173b2d;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-      transition: 0.3s;
-      border: 1px solid #e8e3d7;
+    .section-label {
+      color: #b18a2a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
-    .province-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: #17352d;
     }
 
-    .province-card .number {
-      color: #c09b27;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .province-card h3 {
-      margin: 12px 0 8px;
-      font-size: 22px;
-    }
-
-    .province-card p {
-      color: #707b75;
-      line-height: 1.6;
-      font-size: 14px;
+    .section-text {
+      max-width: 650px;
+      color: #65736e;
     }
 
     /* CATEGORIES */
 
     .categories {
-      background: #063b2d;
-      color: white;
-    }
-
-    .categories .section-title h2 {
-      color: white;
-    }
-
-    .categories .section-title p {
-      color: #cbd8d2;
+      background: #fff;
     }
 
     .category-grid {
-      max-width: 1200px;
-      margin: auto;
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      min-height: 190px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      display: flex;
+      align-items: end;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      transition: .35s;
+    }
+
+    .category:hover {
+      transform: translateY(-7px);
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.75));
+    }
+
+    .category h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 18px;
+    }
+
+    .beach {
+      background-image: url("https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .mountain {
+      background-image: url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .wildlife {
+      background-image: url("https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .heritage {
+      background-image: url("https://images.unsplash.com/photo-1586613835341-0d3e7c8a9f7f?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .culture {
+      background-image: url("https://images.unsplash.com/photo-1591027213328-4c4a3b6d2f5b?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .adventure {
+      background-image: url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80");
+    }
+
+    /* DESTINATIONS */
+
+    .destinations {
+      background: #f3f1e9;
+    }
+
+    .destination-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .destination {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .destination:hover {
+      transform: translateY(-6px);
+    }
+
+    .destination img {
+      height: 250px;
+    }
+
+    .destination-content {
+      padding: 22px;
+    }
+
+    .destination-content h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .destination-content p {
+      color: #718078;
+      font-size: 14px;
+    }
+
+    .destination-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 700;
+      color: #a17b20;
+    }
+
+    /* EXPERIENCES */
+
+    .experiences {
+      background: #17352d;
+      color: white;
+    }
+
+    .experiences .section-title {
+      color: white;
+    }
+
+    .experiences .section-text {
+      color: #cbd6d1;
+    }
+
+    .experience-grid {
+      margin-top: 45px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .category {
-      min-height: 150px;
+    .experience {
+      padding: 30px 24px;
+      border: 1px solid rgba(255,255,255,.15);
       border-radius: 18px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: #0a4a39;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: 0.3s;
+      background: rgba(255,255,255,.04);
     }
 
-    .category:hover {
-      transform: translateY(-5px);
-      background: #105944;
-    }
-
-    .category .icon {
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .category h3 {
-      font-size: 19px;
-    }
-
-    /* FEATURE */
-
-    .feature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .feature-image {
-      height: 430px;
-      border-radius: 25px;
-      background:
-        url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85")
-        center/cover;
-    }
-
-    .feature-text small {
-      color: #b28a18;
+    .experience-number {
+      font-size: 13px;
+      color: #f2c14e;
+      margin-bottom: 30px;
       font-weight: bold;
-      letter-spacing: 2px;
     }
 
-    .feature-text h2 {
-      font-family: Georgia, serif;
-      font-size: 45px;
-      margin: 15px 0;
+    .experience h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    .feature-text p {
-      color: #64736c;
-      line-height: 1.8;
-      margin-bottom: 25px;
+    .experience p {
+      color: #cbd6d1;
+      font-size: 14px;
+    }
+
+    /* WHY US */
+
+    .why-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .why-box {
+      padding: 30px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .why-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .why-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .why-box p {
+      color: #718078;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 110px 6%;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(rgba(10,38,30,.78), rgba(10,38,30,.88)),
+        url("https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .cta h2 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #e5ebe8;
     }
 
     /* FOOTER */
 
     footer {
-      background: #031f18;
-      color: #cbd8d2;
-      padding: 50px 7% 25px;
-      text-align: center;
+      background: #0b211b;
+      color: white;
+      padding: 65px 6% 25px;
     }
 
-    footer .footer-logo {
-      color: #f5c542;
-      font-size: 27px;
-      font-weight: bold;
-      margin-bottom: 12px;
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
     }
 
-    footer p {
+    footer h3 {
+      margin-bottom: 18px;
+    }
+
+    .footer-brand {
+      max-width: 330px;
+      color: #bdc9c4;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+      color: #bdc9c4;
       font-size: 14px;
-      line-height: 1.7;
+    }
+
+    footer li a:hover {
+      color: #f2c14e;
     }
 
     .copyright {
-      margin-top: 30px;
+      max-width: 1200px;
+      margin: 45px auto 0;
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #91a09a;
       font-size: 13px;
     }
 
     /* MOBILE */
 
-    @media (max-width: 850px) {
+    @media (max-width: 950px) {
 
-      nav ul {
-        display: none;
-      }
-
-      .province-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .nav-links {
+        gap: 15px;
       }
 
       .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .destination-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .feature {
-        grid-template-columns: 1fr;
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .feature-image {
-        height: 330px;
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 650px) {
 
-      section {
-        padding: 60px 5%;
+      header {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .nav-links {
+        display: none;
       }
 
       .hero {
-        min-height: 85vh;
+        min-height: 90vh;
       }
 
-      .hero-content h1 {
-        font-size: 52px;
+      .hero h1 {
+        font-size: 48px;
       }
 
-      .hero-content p {
+      .hero p {
         font-size: 16px;
       }
 
-      .province-grid,
-      .category-grid {
+      section {
+        padding: 70px 5%;
+      }
+
+      .category-grid,
+      .destination-grid,
+      .experience-grid,
+      .why-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-title h2 {
-        font-size: 34px;
+      .category {
+        min-height: 220px;
       }
 
-      .feature-text h2 {
-        font-size: 35px;
+      .destination img {
+        height: 230px;
+      }
+
+      .cta {
+        padding: 80px 5%;
       }
     }
   </style>
@@ -403,241 +558,459 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-
+<header>
   <nav>
-    <div class="logo">CEYLON <span>TRAILS</span></div>
+    <a href="#" class="logo">Ceylon<span>Trails</span></a>
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#provinces">Explore</a></li>
-      <li><a href="#categories">Categories</a></li>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#experiences">Experiences</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-btn">Plan Your Trip</a></li>
     </ul>
   </nav>
+</header>
 
 
-  <!-- HERO -->
+<!-- HERO -->
 
-  <header class="hero">
+<section class="hero" id="home">
+  <div class="hero-content">
 
-    <div class="hero-content">
-
-      <small>Discover Sri Lanka</small>
-
-      <h1>Explore the Island</h1>
-
-      <p>
-        Discover breathtaking landscapes, ancient heritage,
-        hidden gems and unforgettable journeys across Sri Lanka.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#provinces" class="btn btn-primary">
-          Explore Sri Lanka
-        </a>
-
-        <a href="#categories" class="btn btn-outline">
-          Discover Places
-        </a>
-
-      </div>
-
+    <div class="hero-small">
+      Explore the Pearl of the Indian Ocean
     </div>
 
-  </header>
+    <h1>
+      Discover Sri Lanka.<br>
+      Follow Your Trail.
+    </h1>
 
+    <p>
+      From misty mountains and golden beaches to ancient kingdoms
+      and wild adventures — discover the island through CeylonTrails.
+    </p>
 
-  <!-- PROVINCES -->
+    <div class="hero-buttons">
+      <a href="#destinations" class="btn btn-primary">
+        Explore Sri Lanka
+      </a>
 
-  <section id="provinces">
-
-    <div class="section-title">
-
-      <small>Explore by Region</small>
-
-      <h2>Discover Sri Lanka</h2>
-
-      <p>
-        Choose a province and begin your journey through
-        Sri Lanka's districts and incredible destinations.
-      </p>
-
+      <a href="#contact" class="btn btn-outline">
+        Plan Your Journey
+      </a>
     </div>
 
-
-    <div class="province-grid">
-
-      <a href="#" class="province-card">
-        <span class="number">01</span>
-        <h3>Western Province</h3>
-        <p>Colombo, Gampaha and Kalutara.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">02</span>
-        <h3>Central Province</h3>
-        <p>Kandy, Matale and Nuwara Eliya.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">03</span>
-        <h3>Southern Province</h3>
-        <p>Galle, Matara and Hambantota.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">04</span>
-        <h3>Northern Province</h3>
-        <p>Jaffna, Kilinochchi, Mannar, Mullaitivu and Vavuniya.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">05</span>
-        <h3>Eastern Province</h3>
-        <p>Trincomalee, Batticaloa and Ampara.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">06</span>
-        <h3>North Western Province</h3>
-        <p>Kurunegala and Puttalam.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">07</span>
-        <h3>North Central Province</h3>
-        <p>Anuradhapura and Polonnaruwa.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">08</span>
-        <h3>Uva Province</h3>
-        <p>Badulla and Monaragala.</p>
-      </a>
-
-      <a href="#" class="province-card">
-        <span class="number">09</span>
-        <h3>Sabaragamuwa Province</h3>
-        <p>Ratnapura and Kegalle.</p>
-      </a>
-
-    </div>
-
-  </section>
+  </div>
+</section>
 
 
-  <!-- CATEGORIES -->
+<!-- CATEGORIES -->
 
-  <section class="categories" id="categories">
+<section class="categories">
+  <div class="container">
 
-    <div class="section-title">
+    <div class="section-label">Explore Your Way</div>
 
-      <small>Find Your Adventure</small>
+    <h2 class="section-title">
+      Something for every kind of traveller.
+    </h2>
 
-      <h2>Explore by Category</h2>
-
-      <p>
-        Find the perfect destination based on what you love.
-      </p>
-
-    </div>
-
+    <p class="section-text">
+      Discover the many sides of Sri Lanka — from tropical beaches
+      to breathtaking mountains, ancient heritage and unforgettable wildlife.
+    </p>
 
     <div class="category-grid">
 
-      <div class="category">
-        <div class="icon">🏖️</div>
+      <a href="#" class="category beach">
         <h3>Beaches</h3>
-      </div>
+      </a>
 
-      <div class="category">
-        <div class="icon">💦</div>
-        <h3>Waterfalls</h3>
-      </div>
-
-      <div class="category">
-        <div class="icon">🏔️</div>
+      <a href="#" class="category mountain">
         <h3>Mountains</h3>
-      </div>
+      </a>
 
-      <div class="category">
-        <div class="icon">🏛️</div>
-        <h3>Historical Places</h3>
-      </div>
-
-      <div class="category">
-        <div class="icon">🐘</div>
+      <a href="#" class="category wildlife">
         <h3>Wildlife</h3>
-      </div>
+      </a>
 
-      <div class="category">
-        <div class="icon">🛕</div>
-        <h3>Religious Places</h3>
-      </div>
+      <a href="#" class="category heritage">
+        <h3>Heritage</h3>
+      </a>
 
-      <div class="category">
-        <div class="icon">🌿</div>
-        <h3>Nature & Forests</h3>
-      </div>
+      <a href="#" class="category culture">
+        <h3>Culture</h3>
+      </a>
 
-      <div class="category">
-        <div class="icon">🥾</div>
+      <a href="#" class="category adventure">
         <h3>Adventure</h3>
-      </div>
+      </a>
 
     </div>
-
-  </section>
-
-
-  <!-- FEATURE -->
-
-  <section id="about">
-
-    <div class="feature">
-
-      <div class="feature-image"></div>
-
-      <div class="feature-text">
-
-        <small>THE CEYLON TRAILS MISSION</small>
-
-        <h2>One Island.<br>Endless Journeys.</h2>
-
-        <p>
-          Ceylon Trails is being created to help travelers
-          discover the beauty, history, culture and hidden
-          treasures of Sri Lanka.
-        </p>
-
-        <a href="#provinces" class="btn btn-primary">
-          Start Exploring
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
+  </div>
+</section>
 
 
-  <!-- FOOTER -->
+<!-- DESTINATIONS -->
 
-  <footer>
+<section class="destinations" id="destinations">
 
-    <div class="footer-logo">CEYLON TRAILS</div>
+  <div class="container">
 
-    <p>
-      Explore Sri Lanka. Discover your trail.
+    <div class="section-label">Where Will You Go?</div>
+
+    <h2 class="section-title">
+      Popular destinations
+    </h2>
+
+    <p class="section-text">
+      Explore some of Sri Lanka's most beautiful and unforgettable places.
     </p>
 
-    <div class="copyright">
-      © 2026 Ceylon Trails. All rights reserved.
+    <div class="destination-grid">
+
+      <article class="destination">
+
+        <img
+          src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=85"
+          alt="Ella Sri Lanka">
+
+        <div class="destination-content">
+          <h3>Ella</h3>
+
+          <p>
+            Misty mountains, tea plantations, waterfalls
+            and one of the world's most scenic train journeys.
+          </p>
+
+          <a href="#contact" class="destination-link">
+            Explore Ella →
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="destination">
+
+        <img
+          src="https://images.unsplash.com/photo-1586613835341-0d3e7c8a9f7f?auto=format&fit=crop&w=1000&q=85"
+          alt="Sigiriya Sri Lanka">
+
+        <div class="destination-content">
+          <h3>Sigiriya</h3>
+
+          <p>
+            Discover the legendary Lion Rock and
+            the ancient history of Sri Lanka.
+          </p>
+
+          <a href="#contact" class="destination-link">
+            Explore Sigiriya →
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="destination">
+
+        <img
+          src="https://images.unsplash.com/photo-1600100397608-f0102c5a7d4c?auto=format&fit=crop&w=1000&q=85"
+          alt="Kandy Sri Lanka">
+
+        <div class="destination-content">
+          <h3>Kandy</h3>
+
+          <p>
+            A cultural heartland surrounded by green hills,
+            temples and beautiful traditions.
+          </p>
+
+          <a href="#contact" class="destination-link">
+            Explore Kandy →
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="destination">
+
+        <img
+          src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=85"
+          alt="Galle Sri Lanka">
+
+        <div class="destination-content">
+          <h3>Galle</h3>
+
+          <p>
+            Colonial charm, ocean views and the historic
+            Galle Fort on Sri Lanka's southern coast.
+          </p>
+
+          <a href="#contact" class="destination-link">
+            Explore Galle →
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="destination">
+
+        <img
+          src="https://images.unsplash.com/photo-1578496781985-452d4a934d50?auto=format&fit=crop&w=1000&q=85"
+          alt="Nuwara Eliya Sri Lanka">
+
+        <div class="destination-content">
+          <h3>Nuwara Eliya</h3>
+
+          <p>
+            Cool mountain air, endless tea estates
+            and beautiful highland scenery.
+          </p>
+
+          <a href="#contact" class="destination-link">
+            Explore Nuwara Eliya →
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="destination">
+
+        <img
+          src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1000&q=85"
+          alt="Yala Sri Lanka">
+
+        <div class="destination-content">
+          <h3>Yala</h3>
+
+          <p>
+            Go wild with unforgettable safari experiences
+            and Sri Lanka's incredible wildlife.
+          </p>
+
+          <a href="#contact" class="destination-link">
+            Explore Yala →
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCES -->
+
+<section class="experiences" id="experiences">
+
+  <div class="container">
+
+    <div class="section-label">Travel Differently</div>
+
+    <h2 class="section-title">
+      Unforgettable experiences
+    </h2>
+
+    <p class="section-text">
+      Don't just visit Sri Lanka. Experience it.
+    </p>
+
+    <div class="experience-grid">
+
+      <div class="experience">
+        <div class="experience-number">01</div>
+        <h3>Scenic Train Journey</h3>
+        <p>
+          Travel through misty mountains, tea country
+          and spectacular landscapes.
+        </p>
+      </div>
+
+      <div class="experience">
+        <div class="experience-number">02</div>
+        <h3>Wildlife Safari</h3>
+        <p>
+          Experience Sri Lanka's wild side and discover
+          elephants, leopards and exotic birds.
+        </p>
+      </div>
+
+      <div class="experience">
+        <div class="experience-number">03</div>
+        <h3>Beach Escape</h3>
+        <p>
+          Relax beside crystal-clear waters and
+          discover Sri Lanka's tropical coastline.
+        </p>
+      </div>
+
+      <div class="experience">
+        <div class="experience-number">04</div>
+        <h3>Mountain Adventure</h3>
+        <p>
+          Hike through beautiful landscapes and
+          discover hidden waterfalls and viewpoints.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY US -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-label">Why CeylonTrails</div>
+
+    <h2 class="section-title">
+      Your journey. Your way.
+    </h2>
+
+    <p class="section-text">
+      We want your Sri Lankan adventure to be more than
+      a checklist of places. Discover the island at your own pace.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-box">
+        <div class="why-icon">🌴</div>
+        <h3>Authentic Experiences</h3>
+        <p>
+          Discover the real Sri Lanka beyond the usual tourist routes.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">🧭</div>
+        <h3>Local Knowledge</h3>
+        <p>
+          Explore the island with useful local travel insights.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">✨</div>
+        <h3>Unique Journeys</h3>
+        <p>
+          Build a trip around the experiences you actually love.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">🇱🇰</div>
+        <h3>One Beautiful Island</h3>
+        <p>
+          From north to south and coast to mountains,
+          discover the diversity of Sri Lanka.
+        </p>
+      </div>
+
     </div>
 
-  </footer>
+  </div>
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+
+  <h2>
+    Ready to discover Sri Lanka?
+  </h2>
+
+  <p>
+    Start planning your next adventure with CeylonTrails
+    and discover an island full of unforgettable places.
+  </p>
+
+  <a
+    href="mailto:hello@ceylontrails.com"
+    class="btn btn-primary">
+    Plan Your Trip
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+      <div class="logo">
+        Ceylon<span>Trails</span>
+      </div>
+
+      <p class="footer-brand">
+        Discover Sri Lanka through unforgettable journeys,
+        beautiful destinations and authentic experiences.
+      </p>
+    </div>
+
+
+    <div>
+      <h3>Explore</h3>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+
+
+    <div>
+      <h3>Destinations</h3>
+
+      <ul>
+        <li>Ella</li>
+        <li>Kandy</li>
+        <li>Sigiriya</li>
+        <li>Galle</li>
+        <li>Yala</li>
+      </ul>
+    </div>
+
+
+    <div>
+      <h3>Contact</h3>
+
+      <ul>
+        <li>
+          <a href="mailto:hello@ceylontrails.com">
+            Email Us
+          </a>
+        </li>
+
+        <li>Sri Lanka 🇱🇰</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 CeylonTrails. All rights reserved.
+  </div>
+
+</footer>
 
 </body>
 </html>
