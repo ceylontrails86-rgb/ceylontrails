@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Central Province | CeylonTrails</title>
+
+<meta name="description"
+content="Explore Central Province of Sri Lanka through CeylonTrails. Discover Kandy, Matale and Nuwara Eliya districts, destinations, mountains, tea country, heritage and adventure.">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f6f1;
+  color:#17352d;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  padding:22px 6%;
+  color:white;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+}
+
+.logo span{
+  color:#f2c14e;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav-links a:hover{
+  color:#f2c14e;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+  min-height:70vh;
+
+  display:flex;
+  align-items:center;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    rgba(5,30,23,.35),
+    rgba(5,30,23,.78)
+  ),
+
+  url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2200&q=90")
+
+  center/cover no-repeat;
+}
+
+.hero-content{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+
+  padding-top:70px;
+}
+
+.breadcrumb{
+  font-size:13px;
+  color:#f2c14e;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(45px,7vw,78px);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:650px;
+  font-size:18px;
+  color:#e9efec;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+section{
+  padding:85px 6%;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.label{
+  color:#a17b20;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.title{
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.text{
+  max-width:700px;
+  color:#6d7973;
+}
+
+
+/* =========================
+   DISTRICTS
+========================= */
+
+.districts{
+  background:white;
+}
+
+.district-grid{
+
+  margin-top:45px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:24px;
+}
+
+.district-card{
+
+  min-height:320px;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:25px;
+
+  color:white;
+
+  background-size:cover;
+  background-position:center;
+
+  transition:.35s;
+}
+
+.district-card:hover{
+  transform:translateY(-7px);
+}
+
+.district-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    transparent 20%,
+    rgba(0,0,0,.8)
+  );
+}
+
+.district-info{
+
+  position:relative;
+
+  z-index:2;
+}
+
+.district-info small{
+
+  color:#f2c14e;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+}
+
+.district-info h3{
+
+  font-size:27px;
+
+  margin:5px 0;
+}
+
+.district-info p{
+
+  font-size:13px;
+
+  color:#e4eae7;
+}
+
+
+/* District backgrounds */
+
+.kandy{
+
+background-image:
+url("https://images.unsplash.com/photo-1600100397608-f0102c5a7d4c?auto=format&fit=crop&w=1200&q=90");
+
+}
+
+.matale{
+
+background-image:
+url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=90");
+
+}
+
+.nuwara{
+
+background-image:
+url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=90");
+
+}
+
+
+/* =========================
+   DISCOVER
+========================= */
+
+.discover{
+  background:#f1efe6;
+}
+
+.discover-grid{
+
+  margin-top:45px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:20px;
+}
+
+.discover-card{
+
+  background:white;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  transition:.3s;
+}
+
+.discover-card:hover{
+  transform:translateY(-5px);
+}
+
+.discover-card img{
+
+  height:220px;
+
+  object-fit:cover;
+}
+
+.discover-content{
+
+  padding:22px;
+}
+
+.discover-content h3{
+
+  font-size:22px;
+
+  margin-bottom:7px;
+}
+
+.discover-content p{
+
+  font-size:14px;
+
+  color:#6d7973;
+}
+
+
+/* =========================
+   EXPERIENCES
+========================= */
+
+.experiences{
+
+  background:#17352d;
+
+  color:white;
+}
+
+.experiences .title{
+  color:white;
+}
+
+.experience-grid{
+
+  margin-top:45px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:18px;
+}
+
+.experience{
+
+  padding:28px 23px;
+
+  border-radius:18px;
+
+  border:
+  1px solid
+  rgba(255,255,255,.14);
+
+  background:
+  rgba(255,255,255,.04);
+}
+
+.experience-icon{
+
+  font-size:32px;
+
+  margin-bottom:20px;
+}
+
+.experience h3{
+
+  font-size:19px;
+
+  margin-bottom:8px;
+}
+
+.experience p{
+
+  font-size:14px;
+
+  color:#c7d2cd;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+
+  text-align:center;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    rgba(8,38,29,.82),
+    rgba(8,38,29,.9)
+  ),
+
+  url("https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=90")
+
+  center/cover no-repeat;
+}
+
+.cta h2{
+
+  font-size:clamp(38px,6vw,62px);
+
+  line-height:1.1;
+
+  margin-bottom:18px;
+}
+
+.cta p{
+
+  max-width:620px;
+
+  margin:0 auto 28px;
+
+  color:#dce5e1;
+}
+
+.button{
+
+  display:inline-block;
+
+  padding:14px 25px;
+
+  border-radius:30px;
+
+  background:#f2c14e;
+
+  color:#17352d;
+
+  font-weight:800;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+  background:#0b211b;
+
+  color:white;
+
+  padding:50px 6% 25px;
+}
+
+.footer{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.footer p{
+
+  color:#aebcb6;
+
+  font-size:14px;
+}
+
+.copyright{
+
+  max-width:1200px;
+
+  margin:35px auto 0;
+
+  padding-top:18px;
+
+  border-top:
+  1px solid
+  rgba(255,255,255,.12);
+
+  color:#82918a;
+
+  font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    min-height:75vh;
+  }
+
+  .district-grid,
+  .discover-grid{
+    grid-template-columns:1fr;
+  }
+
+  .experience-grid{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .footer{
+    flex-direction:column;
+  }
+
+}
+
+
+@media(max-width:500px){
+
+  section{
+    padding:65px 5%;
+  }
+
+  .experience-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav>
+
+<a href="../index.html" class="logo">
+Ceylon<span>Trails</span>
+</a>
+
+<ul class="nav-links">
+
+<li>
+<a href="../index.html">Home</a>
+</li>
+
+<li>
+<a href="../index.html#provinces">
+Provinces
+</a>
+</li>
+
+<li>
+<a href="#districts">
+Districts
+</a>
+</li>
+
+<li>
+<a href="#experiences">
+Experiences
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="breadcrumb">
+Sri Lanka / Central Province
+</div>
+
+<h1>
+Central Province
+</h1>
+
+<p>
+Discover the heart of Sri Lanka — misty mountains,
+ancient heritage, tea country, waterfalls and
+unforgettable journeys.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- DISTRICTS -->
+
+<section class="districts" id="districts">
+
+<div class="container">
+
+<div class="label">
+Explore the Province
+</div>
+
+<h2 class="title">
+Central Province Districts
+</h2>
+
+<p class="text">
+Choose a district to discover its destinations,
+hidden places, trails, activities and travel experiences.
+</p>
+
+
+<div class="district-grid">
+
+
+<!-- KANDY -->
+
+<a href="#kandy"
+   class="district-card kandy">
+
+<div class="district-info">
+
+<small>01 · DISTRICT</small>
+
+<h3>
+Kandy
+</h3>
+
+<p>
+Culture · Heritage · Mountains
+</p>
+
+</div>
+
+</a>
+
+
+<!-- MATALE -->
+
+<a href="#matale"
+   class="district-card matale">
+
+<div class="district-info">
+
+<small>02 · DISTRICT</small>
+
+<h3>
+Matale
+</h3>
+
+<p>
+Nature · Waterfalls · Adventure
+</p>
+
+</div>
+
+</a>
+
+
+<!-- NUWARA ELIYA -->
+
+<a href="#nuwara"
+   class="district-card nuwara">
+
+<div class="district-info">
+
+<small>03 · DISTRICT</small>
+
+<h3>
+Nuwara Eliya
+</h3>
+
+<p>
+Tea Country · Mountains · Cool Climate
+</p>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DISCOVER -->
+
+<section class="discover">
+
+<div class="container">
+
+<div class="label">
+Discover Central
+</div>
+
+<h2 class="title">
+Places you should explore
+</h2>
+
+<p class="text">
+From ancient temples to dramatic mountain landscapes,
+Central Province offers some of Sri Lanka's most memorable destinations.
+</p>
+
+
+<div class="discover-grid">
+
+
+<div class="discover-card">
+
+<img
+src="https://images.unsplash.com/photo-1600100397608-f0102c5a7d4c?auto=format&fit=crop&w=1200&q=85"
+alt="Kandy Sri Lanka">
+
+<div class="discover-content">
+
+<h3>
+Kandy
+</h3>
+
+<p>
+Explore the cultural capital of Sri Lanka,
+surrounded by green mountains and history.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="discover-card">
+
+<img
+src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=85"
+alt="Sri Lanka tea country">
+
+<div class="discover-content">
+
+<h3>
+Nuwara Eliya
+</h3>
+
+<p>
+Walk through beautiful tea country and
+discover the cool highlands of Sri Lanka.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="discover-card">
+
+<img
+src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=85"
+alt="Sri Lanka mountains">
+
+<div class="discover-content">
+
+<h3>
+Mountain Adventures
+</h3>
+
+<p>
+Discover hiking trails, viewpoints,
+waterfalls and hidden mountain landscapes.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCES -->
+
+<section class="experiences" id="experiences">
+
+<div class="container">
+
+<div class="label">
+Things To Do
+</div>
+
+<h2 class="title">
+Experience Central Province
+</h2>
+
+<div class="experience-grid">
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🏛️
+</div>
+
+<h3>
+Culture & Heritage
+</h3>
+
+<p>
+Discover temples, traditions and
+the rich history of the central highlands.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🥾
+</div>
+
+<h3>
+Mountain Trails
+</h3>
+
+<p>
+Explore scenic hiking routes,
+mountain viewpoints and hidden paths.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🍃
+</div>
+
+<h3>
+Tea Country
+</h3>
+
+<p>
+Experience Sri Lanka's famous tea estates
+and beautiful highland landscapes.
+</p>
+
+</div>
+
+
+<div class="experience">
+
+<div class="experience-icon">
+🚂
+</div>
+
+<h3>
+Scenic Train
+</h3>
+
+<p>
+Enjoy one of the world's most beautiful
+train journeys through the hill country.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>
+Ready to explore Central Sri Lanka?
+</h2>
+
+<p>
+Choose a district and start discovering
+destinations, trails and unforgettable experiences.
+</p>
+
+<a
+href="../index.html#provinces"
+class="button">
+
+Explore More Provinces
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer">
+
+<div>
+
+<div class="logo">
+Ceylon<span>Trails</span>
+</div>
+
+<p>
+Explore Sri Lanka — Province by Province,
+District by District, Trail by Trail.
+</p>
+
+</div>
+
+<div>
+
+<p>
+Central Province · Sri Lanka 🇱🇰
+</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 CeylonTrails.
+Discover Sri Lanka. Follow Your Trail.
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
