@@ -1,816 +1,983 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Temple of the Sacred Tooth | CeylonTrails</title>
-
-<meta name="description"
-content="Explore the Temple of the Sacred Tooth Relic in Kandy, Sri Lanka. Discover its history, culture, architecture and travel information.">
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7f6f1;
-  color:#17352d;
-  line-height:1.6;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-img{
-  width:100%;
-  display:block;
-}
-
-/* HEADER */
-
-header{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:100;
-  padding:22px 6%;
-  color:white;
-}
-
-nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo{
-  font-size:28px;
-  font-weight:900;
-}
-
-.logo span{
-  color:#f2c14e;
-}
-
-.nav-links{
-  display:flex;
-  gap:25px;
-  list-style:none;
-}
-
-.nav-links a{
-  font-size:14px;
-  font-weight:700;
-}
-
-.nav-links a:hover{
-  color:#f2c14e;
-}
-
-/* HERO */
-
-.hero{
-  min-height:75vh;
-
-  display:flex;
-  align-items:center;
-
-  color:white;
-
-  background:
-  linear-gradient(
-    rgba(5,30,23,.35),
-    rgba(5,30,23,.84)
-  ),
-
-  url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2200&q=90")
-  center/cover no-repeat;
-}
-
-.hero-content{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-  padding-top:80px;
-}
-
-.breadcrumb{
-  color:#f2c14e;
-  font-size:13px;
-  margin-bottom:15px;
-}
-
-.hero h1{
-  max-width:900px;
-  font-size:clamp(43px,7vw,76px);
-  line-height:1.05;
-  margin-bottom:22px;
-}
-
-.hero p{
-  max-width:720px;
-  font-size:19px;
-  color:#e8efeb;
-}
-
-/* GENERAL */
-
-section{
-  padding:85px 6%;
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-}
-
-.label{
-  color:#a17b20;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-.title{
-  font-size:clamp(34px,5vw,52px);
-  line-height:1.1;
-  margin-bottom:18px;
-}
-
-.text{
-  max-width:760px;
-  color:#6d7973;
-}
-
-/* ABOUT */
-
-.about{
-  background:white;
-}
-
-.about-grid{
-  margin-top:40px;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-
-  align-items:center;
-}
-
-.about-image{
-  height:450px;
-  border-radius:22px;
-  overflow:hidden;
-}
-
-.about-image img{
-  height:100%;
-  object-fit:cover;
-}
-
-.about-content p{
-  color:#68766f;
-  margin-bottom:16px;
-}
-
-/* HIGHLIGHTS */
-
-.highlights{
-  background:#f1efe6;
-}
-
-.highlight-grid{
-  margin-top:45px;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.highlight{
-  background:white;
-  padding:28px;
-  border-radius:18px;
-}
-
-.highlight-icon{
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.highlight h3{
-  margin-bottom:8px;
-}
-
-.highlight p{
-  color:#6d7973;
-  font-size:14px;
-}
-
-/* EXPERIENCE */
-
-.experience{
-  background:#17352d;
-  color:white;
-}
-
-.experience .title{
-  color:white;
-}
-
-.experience-grid{
-  margin-top:45px;
-
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-
-.experience-card{
-  padding:28px;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:18px;
-  background:rgba(255,255,255,.04);
-}
-
-.experience-card h3{
-  margin-bottom:8px;
-}
-
-.experience-card p{
-  color:#c6d2cc;
-  font-size:14px;
-}
-
-/* TRAVEL */
-
-.travel{
-  background:white;
-}
-
-.travel-grid{
-  margin-top:45px;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.travel-card{
-  padding:28px;
-  border-radius:18px;
-  background:#f6f4ec;
-}
-
-.travel-card span{
-  display:block;
-  font-size:30px;
-  margin-bottom:15px;
-}
-
-.travel-card h3{
-  margin-bottom:8px;
-}
-
-.travel-card p{
-  color:#6d7973;
-  font-size:14px;
-}
-
-/* CTA */
-
-.cta{
-  text-align:center;
-  color:white;
-
-  background:
-  linear-gradient(
-    rgba(8,38,29,.82),
-    rgba(8,38,29,.92)
-  ),
-
-  url("https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2000&q=90")
-  center/cover no-repeat;
-}
-
-.cta h2{
-  font-size:clamp(38px,6vw,62px);
-  line-height:1.1;
-  margin-bottom:18px;
-}
-
-.cta p{
-  max-width:650px;
-  margin:0 auto 28px;
-  color:#dce5e1;
-}
-
-.button{
-  display:inline-block;
-  padding:14px 25px;
-  border-radius:30px;
-  background:#f2c14e;
-  color:#17352d;
-  font-weight:800;
-}
-
-/* FOOTER */
-
-footer{
-  background:#0b211b;
-  color:white;
-  padding:50px 6% 25px;
-}
-
-.footer{
-  max-width:1200px;
-  margin:auto;
-
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-}
-
-.footer p{
-  color:#aebcb6;
-  font-size:14px;
-}
-
-.copyright{
-  max-width:1200px;
-  margin:35px auto 0;
-  padding-top:18px;
-
-  border-top:1px solid rgba(255,255,255,.12);
-
-  color:#82918a;
-  font-size:13px;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .highlight-grid,
-  .travel-grid{
-    grid-template-columns:1fr;
-  }
-
-  .experience-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:500px){
-
-  section{
-    padding:65px 5%;
-  }
-
-  .footer{
-    flex-direction:column;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Temple of the Sacred Tooth Relic | CeylonTrails</title>
+
+  <meta name="description"
+        content="Explore the Temple of the Sacred Tooth Relic in Kandy, Sri Lanka. Discover its history, architecture, religious traditions, location, nearby hotels, restaurants and travel information.">
+
+  <meta name="keywords"
+        content="Temple of the Sacred Tooth Relic, Sri Dalada Maligawa, Kandy, Sri Lanka, Kandy Temple, Dalada Maligawa, Kandy travel">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      background: #f7f5ef;
+      color: #222;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #063b2d;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #f5c542;
+      letter-spacing: .5px;
+    }
+
+    .back-link {
+      border: 1px solid rgba(255,255,255,.3);
+      padding: 9px 16px;
+      border-radius: 25px;
+      font-size: .9rem;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: end;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.05)),
+        url("../../images/temple-of-the-sacred-tooth.jpg")
+        center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      padding: 90px 0 70px;
+      max-width: 850px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f5c542;
+      color: #1b1b1b;
+      padding: 6px 13px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: .85rem;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 750px;
+      color: #f1f1f1;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      color: #063b2d;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: #555;
+      margin-bottom: 35px;
+    }
+
+    .content {
+      max-width: 900px;
+    }
+
+    .content h3 {
+      color: #063b2d;
+      margin: 35px 0 10px;
+      font-size: 1.35rem;
+    }
+
+    .content p {
+      margin-bottom: 18px;
+    }
+
+    /* INFO CARDS */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    .card h3 {
+      color: #063b2d;
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    /* MAP */
+
+    .map-box {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #063b2d;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    .map-button:hover {
+      background: #0a5742;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    /* VIDEO */
+
+    .video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #111;
+    }
+
+    .video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* PLACE LISTS */
+
+    .place-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .place-item {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .place-item h3 {
+      color: #063b2d;
+      margin-bottom: 5px;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: #063b2d;
+      color: white;
+      text-align: center;
+      border-radius: 25px;
+      padding: 55px 25px;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      background: #f5c542;
+      color: #111;
+      padding: 12px 22px;
+      border-radius: 25px;
+      font-weight: 800;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #031f18;
+      color: #ddd;
+      padding: 45px 0;
+      margin-top: 60px;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: #f5c542;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .grid,
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 250px;
+      }
+
+      .nav {
+        min-height: 62px;
+      }
+
+      .back-link {
+        padding: 7px 11px;
+        font-size: .8rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
+  <div class="container nav">
+    <a href="../../../index.html" class="logo">CeylonTrails</a>
 
-<nav>
-
-<a href="../../../index.html" class="logo">
-Ceylon<span>Trails</span>
-</a>
-
-<ul class="nav-links">
-
-<li>
-<a href="../../../index.html">Home</a>
-</li>
-
-<li>
-<a href="../../central.html">Central Province</a>
-</li>
-
-<li>
-<a href="../kandy.html">Kandy District</a>
-</li>
-
-<li>
-<a href="kandy-city.html">Kandy City</a>
-</li>
-
-</ul>
-
-</nav>
-
+    <a href="kandy.html" class="back-link">
+      ← Back to Kandy
+    </a>
+  </div>
 </header>
-
 
 <!-- HERO -->
 
 <section class="hero">
+  <div class="container hero-content">
 
-<div class="hero-content">
+    <span class="tag">Kandy • Cultural Heritage</span>
 
-<div class="breadcrumb">
-Sri Lanka / Central Province / Kandy District / Kandy City / Temple
-</div>
+    <h1>Temple of the Sacred Tooth Relic</h1>
 
-<h1>
-Temple of the Sacred Tooth
-</h1>
+    <p>
+      Discover Sri Dalada Maligawa, one of Sri Lanka's most important
+      Buddhist pilgrimage sites and a historic landmark at the heart
+      of the Sacred City of Kandy.
+    </p>
 
-<p>
-Discover one of Sri Lanka's most important cultural
-and religious landmarks in the heart of historic Kandy.
-</p>
-
-</div>
-
+  </div>
 </section>
 
 
-<!-- ABOUT -->
+<!-- INTRODUCTION -->
 
-<section class="about">
+<section>
+  <div class="container">
 
-<div class="container">
+    <h2 class="section-title">About the Temple</h2>
 
-<div class="about-grid">
+    <div class="content">
 
-<div class="about-image">
+      <p>
+        The Temple of the Sacred Tooth Relic, commonly known as
+        Sri Dalada Maligawa, stands within the historic royal palace
+        complex of Kandy. It is renowned as the shrine associated with
+        the Sacred Tooth Relic of the Buddha and remains an important
+        Buddhist pilgrimage destination.
+      </p>
 
-<img
-src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1400&q=90"
-alt="Temple in Sri Lanka">
+      <p>
+        The temple is not simply a religious building. Its setting,
+        architecture, rituals and connection with the former Kandyan
+        kingdom make it one of the most significant cultural landmarks
+        in Sri Lanka.
+      </p>
 
-</div>
+    </div>
 
-
-<div class="about-content">
-
-<div class="label">
-Kandy Heritage
-</div>
-
-<h2 class="title">
-A place of history, culture and devotion.
-</h2>
-
-<p>
-The Temple of the Sacred Tooth Relic,
-commonly known as Sri Dalada Maligawa,
-is located in the historic city of Kandy.
-</p>
-
-<p>
-The temple is an important part of Sri Lanka's
-cultural and religious heritage and attracts visitors
-from around the world.
-</p>
-
-<p>
-Its architecture, traditions and surrounding
-Kandy Lake landscape make it one of the city's
-most memorable places to experience.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 
-<!-- HIGHLIGHTS -->
+<!-- HISTORY -->
 
-<section class="highlights">
+<section>
+  <div class="container">
 
-<div class="container">
+    <h2 class="section-title">A Detailed History</h2>
 
-<div class="label">
-Discover
-</div>
+    <p class="section-intro">
+      The story of the Sacred Tooth Relic is closely connected with
+      the history of Sri Lankan kingship, Buddhism and the changing
+      capitals of the island.
+    </p>
 
-<h2 class="title">
-What makes it special
-</h2>
+    <div class="content">
 
+      <h3>The Sacred Tooth Relic and its Journey</h3>
 
-<div class="highlight-grid">
+      <p>
+        According to the traditional account recorded by Sri Lankan
+        Buddhist sources, the Sacred Tooth Relic was brought to Sri
+        Lanka during the 4th century CE. Prince Dantha and Princess
+        Hemamala are traditionally associated with bringing the relic
+        to the island during the reign of King Keerthi Sri
+        Meghavarna.
+      </p>
 
+      <p>
+        Over the centuries, the relic became closely associated with
+        the authority of Sri Lankan rulers. Wherever the royal capital
+        moved, the protection and veneration of the relic remained an
+        important responsibility of the ruling kingdom.
+      </p>
 
-<div class="highlight">
+      <h3>The Tooth Relic and Sri Lankan Kingship</h3>
 
-<div class="highlight-icon">
-🏛️
-</div>
+      <p>
+        The Sacred Tooth Relic came to be regarded as a symbol of
+        sovereignty. This explains why shrines associated with the relic
+        were traditionally established close to royal residences.
+        UNESCO's documentation identifies the long-standing relationship
+        between the royal palace and the Temple of the Tooth as an
+        important feature of Kandy's cultural heritage.
+      </p>
 
-<h3>
-Historic Architecture
-</h3>
+      <h3>Kandy – The Last Royal Capital</h3>
 
-<p>
-Experience traditional architecture,
-artwork and details throughout the temple complex.
-</p>
+      <p>
+        Kandy became the last capital of the Sinhala kings. The city,
+        historically known as Senkadagalapura, developed as a major
+        political and religious centre surrounded by the mountains of
+        Sri Lanka's central highlands.
+      </p>
 
-</div>
+      <p>
+        UNESCO describes Kandy as the last capital of the Sinhala kings,
+        whose patronage helped preserve and develop the island's
+        traditional culture until the British occupation in 1815.
+      </p>
 
+      <h3>The Temple in the Kandyan Kingdom</h3>
 
-<div class="highlight">
+      <p>
+        Sri Lanka Tourism records that King Wimaladharmasuriya I built
+        a temple for the Sacred Tooth Relic in Kandy in 1592. The
+        building history of the temple continued under later Kandyan
+        rulers, who expanded and rebuilt parts of the complex.
+      </p>
 
-<div class="highlight-icon">
-🪷
-</div>
+      <h3>The Royal Palace Complex</h3>
 
-<h3>
-Cultural Heritage
-</h3>
+      <p>
+        The temple formed part of a larger royal complex rather than
+        standing as an isolated shrine. The relationship between the
+        palace and the temple reflects an important tradition in which
+        the Sacred Tooth Relic was closely connected with royal power
+        and religious legitimacy.
+      </p>
 
-<p>
-Discover traditions and customs that
-form an important part of Sri Lankan culture.
-</p>
+      <h3>Paththirippuwa – The Octagon</h3>
 
-</div>
+      <p>
+        One of the most recognisable structures associated with the
+        complex is the Paththirippuwa, or Octagon. Sri Lanka Tourism
+        attributes its construction to King Sri Wickrama Rajasinghe.
+        The structure originally formed part of the royal palace
+        complex and later became part of the temple.
+      </p>
 
+      <h3>Kandyan Architecture</h3>
 
-<div class="highlight">
+      <p>
+        The temple complex contains architectural features associated
+        with the Kandyan tradition. The entrance area includes the
+        Mahawahalkada and a traditionally carved Sandakadapahana,
+        while the surrounding structures contain decorative details
+        reflecting the artistic traditions of the Kandyan period.
+      </p>
 
-<div class="highlight-icon">
-📸
-</div>
+      <h3>The Sacred Chamber</h3>
 
-<h3>
-Beautiful Surroundings
-</h3>
+      <p>
+        The Sacred Tooth Relic is kept within a highly protected inner
+        chamber. Sri Lanka Tourism describes the relic as being
+        enclosed within a series of protective caskets decorated with
+        precious materials.
+      </p>
 
-<p>
-Enjoy the atmosphere around the temple,
-Kandy Lake and the surrounding hills.
-</p>
+      <h3>Daily Religious Rituals</h3>
 
-</div>
+      <p>
+        Daily rituals form an important part of the life of the temple.
+        These ceremonies, traditionally accompanied by drumming and
+        other forms of religious observance, continue the long-standing
+        tradition of honouring the Sacred Tooth Relic.
+      </p>
 
+      <h3>The Esala Perahera</h3>
 
-</div>
+      <p>
+        Kandy is also internationally known for the Esala Perahera,
+        the great annual procession associated with the Sacred Tooth
+        Relic. The procession brings together traditional dancers,
+        drummers, ceremonial performers and richly decorated elephants,
+        creating one of Sri Lanka's most recognisable cultural events.
+      </p>
 
-</div>
+      <h3>The Colonial Period</h3>
 
+      <p>
+        Kandy remained the last independent royal capital until the
+        British occupation in 1815. Even after the end of the Kandyan
+        monarchy, the Temple of the Sacred Tooth Relic retained its
+        importance as a centre of Buddhist devotion and Sri Lankan
+        cultural identity.
+      </p>
+
+      <h3>The Temple in the Modern Era</h3>
+
+      <p>
+        Today, Sri Dalada Maligawa continues to function as an active
+        place of worship and pilgrimage. It is also one of the most
+        important cultural attractions in Kandy, visited by pilgrims
+        and travellers from Sri Lanka and around the world.
+      </p>
+
+      <h3>UNESCO World Heritage Significance</h3>
+
+      <p>
+        The Sacred City of Kandy was inscribed on the UNESCO World
+        Heritage List in 1988. UNESCO recognises the city's historic
+        royal ensemble, its Buddhist significance and its connection
+        with the Temple of the Tooth as important elements of its
+        outstanding cultural value.
+      </p>
+
+    </div>
+
+  </div>
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- WHY VISIT -->
 
-<section class="experience">
+<section>
+  <div class="container">
 
-<div class="container">
+    <h2 class="section-title">Why You Should Visit</h2>
 
-<div class="label">
-Visitor Experience
-</div>
+    <div class="grid">
 
-<h2 class="title">
-Things to experience
-</h2>
+      <div class="card">
+        <div class="icon">🛕</div>
+        <h3>Religious Heritage</h3>
+        <p>
+          Experience one of Sri Lanka's most important Buddhist
+          pilgrimage sites.
+        </p>
+      </div>
 
+      <div class="card">
+        <div class="icon">🏛️</div>
+        <h3>Royal History</h3>
+        <p>
+          Explore a site deeply connected with the former Kandyan
+          royal kingdom.
+        </p>
+      </div>
 
-<div class="experience-grid">
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Kandyan Architecture</h3>
+        <p>
+          Discover traditional architecture, carvings and decorative
+          elements.
+        </p>
+      </div>
 
+    </div>
 
-<div class="experience-card">
-
-<h3>
-Explore the Temple Complex
-</h3>
-
-<p>
-Take time to explore the different areas,
-architecture and cultural details of this historic site.
-</p>
-
-</div>
-
-
-<div class="experience-card">
-
-<h3>
-Learn About Kandy's Heritage
-</h3>
-
-<p>
-Combine your visit with other cultural places
-around the historic centre of Kandy.
-</p>
-
-</div>
-
-
-<div class="experience-card">
-
-<h3>
-Walk Around Kandy Lake
-</h3>
-
-<p>
-After visiting the temple, enjoy a peaceful walk
-around the nearby lake and city.
-</p>
-
-</div>
-
-
-<div class="experience-card">
-
-<h3>
-Photography
-</h3>
-
-<p>
-Capture the architecture, surrounding landscape
-and atmosphere while respecting local customs.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 
-<!-- TRAVEL INFO -->
+<!-- PHOTO GALLERY -->
 
-<section class="travel">
+<section>
+  <div class="container">
 
-<div class="container">
+    <h2 class="section-title">Photos</h2>
 
-<div class="label">
-Travel Guide
-</div>
+    <p class="section-intro">
+      Add your original CeylonTrails photographs here.
+    </p>
 
-<h2 class="title">
-Plan your visit
-</h2>
+    <div class="gallery">
 
+      <img src="../../images/temple-of-the-sacred-tooth-1.jpg"
+           alt="Temple of the Sacred Tooth Relic Kandy">
 
-<div class="travel-grid">
+      <img src="../../images/temple-of-the-sacred-tooth-2.jpg"
+           alt="Sri Dalada Maligawa Kandy">
 
+      <img src="../../images/temple-of-the-sacred-tooth-3.jpg"
+           alt="Temple architecture in Kandy">
 
-<div class="travel-card">
+      <img src="../../images/temple-of-the-sacred-tooth-4.jpg"
+           alt="Sacred Tooth Temple Kandy">
 
-<span>📍</span>
+      <img src="../../images/temple-of-the-sacred-tooth-5.jpg"
+           alt="Kandy Temple exterior">
 
-<h3>
-Location
-</h3>
+      <img src="../../images/temple-of-the-sacred-tooth-6.jpg"
+           alt="Sri Dalada Maligawa architecture">
 
-<p>
-Kandy City, Central Province,
-Sri Lanka.
-</p>
+    </div>
 
-</div>
-
-
-<div class="travel-card">
-
-<span>👕</span>
-
-<h3>
-Dress Respectfully
-</h3>
-
-<p>
-As this is a religious site,
-visitors should dress modestly and respectfully.
-</p>
-
-</div>
+  </div>
+</section>
 
 
-<div class="travel-card">
+<!-- VIDEO -->
 
-<span>📷</span>
+<section>
+  <div class="container">
 
-<h3>
-Be Respectful
-</h3>
+    <h2 class="section-title">Video</h2>
 
-<p>
-Follow the site's photography rules
-and respect worshippers and ceremonies.
-</p>
+    <div class="video">
 
-</div>
+      <!-- Replace VIDEO_ID with the YouTube video ID -->
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Temple of the Sacred Tooth Relic Kandy"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+  </div>
+</section>
 
 
-</div>
+<!-- LOCATION -->
 
-</div>
+<section>
+  <div class="container">
 
+    <h2 class="section-title">Location</h2>
+
+    <div class="card">
+
+      <h3>Temple of the Sacred Tooth Relic</h3>
+
+      <p>
+        Kandy, Central Province, Sri Lanka
+      </p>
+
+      <a
+        class="map-button"
+        href="https://www.google.com/maps/search/?api=1&query=Temple+of+the+Sacred+Tooth+Relic+Kandy"
+        target="_blank"
+        rel="noopener">
+        📍 Open in Google Maps
+      </a>
+
+    </div>
+
+    <br>
+
+    <div class="map-box">
+
+      <iframe
+        src="https://www.google.com/maps?q=Temple%20of%20the%20Sacred%20Tooth%20Relic%20Kandy&output=embed"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VISITOR INFORMATION -->
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Visitor Information</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">👕</div>
+        <h3>Dress Respectfully</h3>
+        <p>
+          As this is a sacred Buddhist site, visitors should wear
+          respectful clothing. Avoid clothing that is unsuitable
+          for a religious place.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👣</div>
+        <h3>Remove Shoes</h3>
+        <p>
+          Visitors should follow the temple's rules regarding
+          footwear when entering designated sacred areas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🙏</div>
+        <h3>Respect Worshippers</h3>
+        <p>
+          Keep noise low and respect people who are praying,
+          making offerings or taking part in religious ceremonies.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- BEST TIME -->
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Best Time to Visit</h2>
+
+    <div class="content">
+
+      <p>
+        The best time depends on what you want to experience. Visitors
+        interested in the temple's daily religious atmosphere may
+        prefer a time when ceremonies are taking place. Those looking
+        for a quieter sightseeing experience should consider visiting
+        outside the busiest periods.
+      </p>
+
+      <p>
+        During the annual Kandy Esala Perahera period, the city becomes
+        especially busy and the atmosphere is very different from an
+        ordinary day.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOTELS -->
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Hotels Nearby</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Thilanka Hotel - Kandy</h3>
+        <p>
+          03 Sangamitta Mawatha, Kandy.
+        </p>
+        <p>
+          A convenient accommodation option in the Kandy area.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Queens Hotel</h3>
+        <p>
+          A9, Kandy.
+        </p>
+        <p>
+          A historic city-centre accommodation option close to
+          major Kandy attractions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Radisson Hotel Kandy</h3>
+        <p>
+          31 Saranankara Road, Kandy.
+        </p>
+        <p>
+          A modern accommodation option within the Kandy city area.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOD -->
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Food & Restaurants</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Sunista Cafe</h3>
+        <p>
+          Tomlin Park, Sangaraja Mawatha, Kandy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Kulture32</h3>
+        <p>
+          32 A9, Kandy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Hungry Brunch Café & Restaurant</h3>
+        <p>
+          DS Senanayake Veediya, Kandy.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRANSPORT -->
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Transport & Vehicle Services</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>JP Rent a Car - Kandy</h3>
+        <p>
+          Car rental service in Kandy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Kandy Rent Cars</h3>
+        <p>
+          Vehicle rental service serving the Kandy area.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Challenger Rent a Car</h3>
+        <p>
+          Car rental service in Kandy.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- NEARBY PLACES -->
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Nearby Places to Explore</h2>
+
+    <div class="place-list">
+
+      <div class="place-item">
+        <h3>Kandy Lake</h3>
+        <p>
+          A famous landmark beside the historic centre of Kandy.
+        </p>
+      </div>
+
+      <div class="place-item">
+        <h3>Kandy Royal Palace Complex</h3>
+        <p>
+          Explore the historic royal environment surrounding the temple.
+        </p>
+      </div>
+
+      <div class="place-item">
+        <h3>Paththirippuwa</h3>
+        <p>
+          The iconic octagonal structure associated with the Kandyan
+          royal complex.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CTA -->
 
-<section class="cta">
+<section>
+  <div class="container">
 
-<h2>
-Continue your Kandy journey.
-</h2>
+    <div class="cta">
 
-<p>
-Discover more places, trails and experiences
-around Kandy District with CeylonTrails.
-</p>
+      <h2>Explore More of Kandy</h2>
 
-<a
-href="kandy-city.html"
-class="button">
+      <p>
+        Discover more beautiful and historic destinations across
+        Kandy District with CeylonTrails.
+      </p>
 
-← Back to Kandy City
+      <a href="kandy.html">
+        ← Back to Kandy Destinations
+      </a>
 
-</a>
+    </div>
 
+  </div>
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-<div class="footer">
+  <div class="container footer-inner">
 
-<div>
+    <div>
+      <strong>CeylonTrails</strong>
+      <p>
+        Discover Sri Lanka through its places, people, history and culture.
+      </p>
+    </div>
 
-<div class="logo">
-Ceylon<span>Trails</span>
-</div>
+    <div>
+      <p>© 2026 CeylonTrails</p>
+    </div>
 
-<p>
-Explore Sri Lanka — Province by Province,
-District by District, Trail by Trail.
-</p>
-
-</div>
-
-<div>
-
-<p>
-Temple of the Sacred Tooth · Kandy · Sri Lanka 🇱🇰
-</p>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 CeylonTrails.
-Discover Sri Lanka. Follow Your Trail.
-
-</div>
+  </div>
 
 </footer>
 
 </body>
 </html>
+```
